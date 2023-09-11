@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { AiOutlineMenu, AiOutlineSearch } from "react-icons/ai";
 import { HiOutlineShoppingBag } from "react-icons/hi";
@@ -52,18 +51,20 @@ const Navbar = () => {
     <>
       <nav className="navbar dekstop-nav">
         <div className="nav-container w-100">
-          <form className="nav-search">
-            <GoLocation className="nav-link-item" />
+          <form className="nav-search nav-search-mbil">
+            {/* <GoLocation className="nav-link-item" /> */}
             <span className="text-nav"  onClick={()=>router.push("/contactUS")} >
               <MdOutlineCall className="nav-link-item me-1" /> Contact Us
             </span>
           </form>
-          <section className="brand-logo">
-            {/* <img
-              src="../../../imgs/1_PG.com.png"
-              // onClick={() => router.push("/")}
-              style={{ cursor: "pointer" }}
-            /> */}
+          <section >
+            <img
+
+              src="../../../imgs/logo.png"
+              className="brand-logo"
+              onClick={() => router.push("/")}
+          
+            />
           </section>
 
           <form className="nav-search">
@@ -74,7 +75,7 @@ const Navbar = () => {
         </div>
       </nav>
       {/* searchbar modal */}
-      <Modal show={show} onHide={handleClose} animation={false}>
+      <Modal show={show} onHide={handleClose}    size="lg">
         <Modal.Body className="modal-body">
           <div className="searchBar">
             <input
@@ -89,7 +90,7 @@ const Navbar = () => {
               type="submit"
               name="searchQuerySubmit"
             >
-              <AiOutlineSearch style={{ fontSize: "1.5rem", color: "black" }} />
+              <AiOutlineSearch style={{ fontSize: "1.5rem", color: "#979696" }} />
             </button>
           </div>
           <div className="searchResult ">
@@ -101,6 +102,10 @@ const Navbar = () => {
 
       <style jsx>
         {`
+        .brand-logo{
+          height: 37.5px;
+          cursor: pointer;
+        }
           .searchResult {
             
             margin: 0 auto;
@@ -127,9 +132,10 @@ const Navbar = () => {
             outline: none;
             background-color: #ffffff;
             border-radius: 2.5px;
-            border: 1.5px solid black;
+            border: 1.2px solid #e1dede;
             padding: 0 3.5rem 0 1.5rem;
             font-size: 1rem;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
           }
 
           #searchQuerySubmit {
@@ -156,22 +162,23 @@ const Navbar = () => {
             background-color: transparent;
             padding: 1.12vw 1.8vw;
           }
-          .mbil-nav {
-            display: none;
-          }
+        
+  
           .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
             vertical-align: middle;
           }
+          @media only screen and (max-width: 768px) {
+            .brand-logo{
+              height: 35px;
+            }
+            .nav-search-mbil{
+              display: none;
+            }
+          }
 
-          // .navbar-mobile {
-          //   border-left: 1px solid transparent;
-          // }
-          // .navbar-mobile-scroll {
-          //   border-left: 1px solid #eeeeee;
-          // }
         `}
       </style>
     </>

@@ -53,7 +53,7 @@ const Banner = () => {
           <div className="content">
             <Navbar />
             <div className="position-relative" style={{height:"75vh"}}>
-              <h1 className="container-fluid pageWidth text-center">Discover & Buy Antiques </h1>
+              <h1 className="container-fluid pageWidth text-center">Discover & Buy <span style={{color:"#FFC107"}}>  Antices </span></h1>
             </div>
           </div>
         </div>
@@ -64,17 +64,8 @@ const Banner = () => {
             position: relative;
             z-index: 3; /* Adjust to appear above the overlay */
           }
-          span {
-            color: #737272;
-            font-size: 0.8rem;
-            font-weight: 500;
-            letter-spacing: 0.7px;
-          }
-          li {
-            display: flex;
-            align-items: center;
-            line-height: 1.5rem;
-          }
+       
+        
           .body {
             padding: 0vw;
           }

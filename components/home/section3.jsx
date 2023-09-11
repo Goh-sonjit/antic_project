@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-
+import { useRouter } from "next/router";
 function ContactUs() {
+  const router = useRouter();
   const [windowWidth, setWindowWidth] = useState(
     typeof window !== "undefined" && window.innerWidth
   );
@@ -77,7 +78,7 @@ function ContactUs() {
                     </h2>
                  
                     <p className="my-md-4">{truncateText(section.story)}</p>
-                    <button className="my-4">Read more</button>
+                    <button className="my-md-4 my-0" onClick={()=>router.push(`/product/${section.product_name}`)}>Read more</button>
                   </div>
                 </div>
               </>
@@ -94,7 +95,7 @@ function ContactUs() {
                     </h2>
                    
                     <p className="my-md-4">{ truncateText(section.story)}</p>
-                    <button className="my-4">Read more</button>
+                    <button className="my-md-4 my-0" onClick={()=>router.push(`/product/${section.product_name}`)}>Read more</button>
                   </div>
                 </div>
                 <div className=" m-0 p-0 col-6">
