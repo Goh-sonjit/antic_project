@@ -29,10 +29,7 @@ const Banner = () => {
               objectFit: "cover",
             }}
           >
-            <source
-              src="../../../imgs/1069722058-preview.mp4"
-              type="video/mp4"
-            />
+            <source src="../../../imgs/a_book.mp4" type="video/mp4" />
             <source src="movie.ogg" type="video/ogg" />
           </video>
 
@@ -52,8 +49,11 @@ const Banner = () => {
 
           <div className="content">
             <Navbar />
-            <div className="position-relative" style={{height:"75vh"}}>
-              <h1 className="container-fluid pageWidth text-center">Discover & Buy <span style={{color:"#FFC107"}}>  Antices </span></h1>
+            <div className="position-relative" style={{ height: "75vh" }}>
+              <h1 className="container-fluid pageWidth text-center">
+                Discover & Buy{" "}
+                <span style={{ color: "#FFC107" }}> Antices </span>
+              </h1>
             </div>
           </div>
         </div>
@@ -64,12 +64,11 @@ const Banner = () => {
             position: relative;
             z-index: 3; /* Adjust to appear above the overlay */
           }
-       
-        
+
           .body {
             padding: 0vw;
           }
-          h1{
+          h1 {
             position: absolute;
             z-index: 3;
             color: var(--color-white);
@@ -79,8 +78,8 @@ const Banner = () => {
             right: 0;
             color: #fff;
             font-size: 4.5rem;
-    line-height: 5rem;
-    font-family: utopia std;
+            line-height: 5rem;
+            font-family: utopia std;
           }
         `}
       </style>
